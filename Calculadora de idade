@@ -1,0 +1,17 @@
+import datetime
+from dateutil.relativedelta import relativedelta
+
+escolha = " "
+while escolha != "n":
+    ano_de_nascimento = int(input("Digite o ano de nascimento do usuário e tecle enter: "))
+    mes_de_nascimento = int(input("Digite o mês de nascimento do usuário e tecle enter: "))
+    dia_de_nascimento = int(input("Digite o dia de nascimento do usuário e tecle enter: "))
+
+    data_nascimento = datetime.date(ano_de_nascimento, mes_de_nascimento, dia_de_nascimento)
+    data_atual = datetime.date.today()
+    diferenca = relativedelta(data_atual, data_nascimento)
+
+    print(f"A idade do usuário é {diferenca.years} anos, {diferenca.months} meses e {diferenca.days} dias.")
+    escolha = input("Deseja fazer uma nova verificação de idade? S ou N: ").lower()
+
+print("Fim do Programa.")
